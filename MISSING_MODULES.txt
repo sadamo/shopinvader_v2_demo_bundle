@@ -1,0 +1,5 @@
+shopinvader_api_delivery_carrier
+shopinvader_api_payment_cart
+shopinvader_api_payment_provider_custom
+shopinvader_api_payment_provider_sips
+shopinvader_api_payment_provider_stripe
