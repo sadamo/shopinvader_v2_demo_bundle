@@ -1,0 +1,42 @@
+# Odoo/Python padrão
+*.pyc
+*.pyo
+__pycache__/
+*.log
+*.swp
+*.bak
+*.tmp
+.DS_Store
+.env
+
+# Odoo arquivos gerados
+*.zip
+*.tar.gz
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# Testes/coverage
+.coverage
+htmlcov/
+
+# Arquivos temporários
+/tmp/
+
+# Ignorar arquivos de configuração locais
+*.local
+
+# Ignorar arquivos de banco de dados
+*.db
+*.sqlite3
+
+# Ignorar arquivos de build
+build/
+dist/
+
+# Ignorar arquivos de dependências
+node_modules/
+
+# Ignorar arquivos de sistema
+Thumbs.db
