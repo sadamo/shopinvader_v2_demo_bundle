@@ -22,3 +22,4 @@ msgstr ""
 #: model:ir.model.fields,field_description:sale_channel_product.field_product_template__channel_ids
 msgid "Sale Channel"
 msgstr ""
+

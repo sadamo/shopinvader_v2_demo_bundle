@@ -1,1 +1,1 @@
-from . import test_product_brand
+# Copiado da versão 16.0. Iniciar adaptação para Odoo 17.0.

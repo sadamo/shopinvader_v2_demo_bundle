@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="product_setting_by_company" model="product.product">
         <field name="name">Product with threshold set on the company</field>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="res_company_view_form_threshold" model="ir.ui.view">
         <field name="name">res.company.threshold</field>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="product.template.link.type" id="product_template_link_type_demo_range">
+        <field name="is_symmetric" eval="0" />
+        <field name="name">Upper Range</field>
+        <field name="inverse_name">Lower Range</field>
+        <field name="code">upper-range</field>
+        <field name="inverse_code">lower-range</field>
+    </record>
+</odoo>

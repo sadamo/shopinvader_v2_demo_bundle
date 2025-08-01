@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="product_brand_search_form_view" model="ir.ui.view">
         <field name="name">product.brand.search.form</field>
@@ -35,12 +35,12 @@
                             type="action"
                             class="oe_stat_button"
                             icon="fa-cubes"
+                            context="{'default_product_brand_id': id}"
                         >
                             <field
                                 name="products_count"
                                 widget="statinfo"
                                 string="Products"
-                                context="{'default_product_brand_id': active_id}"
                             />
                         </button>
                     </div>
@@ -142,7 +142,7 @@
             </field>
         </field>
     </record>
-    <!-- <record id="view_product_template_kanban_brand" model="ir.ui.view">
+    <record id="view_product_template_kanban_brand" model="ir.ui.view">
         <field name="name">product kanban view: add brand</field>
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_kanban_view" />
@@ -159,14 +159,14 @@
                 </div>
             </xpath>
         </field>
-    </record> -->
-    <!-- <record id="view_product_variant_kanban_brand" model="ir.ui.view">
+    </record>
+    <record id="view_product_variant_kanban_brand" model="ir.ui.view">
         <field name="name">product variant kanban view: add brand</field>
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_kanban_view" />
         <field name="arch" type="xml">
             <xpath
-                expr="//div[hasclass('oe_kanban_details')]/strong[1]"
+                expr="//div[hasclass('oe_kanban_details')]//strong[1]"
                 position="after"
             >
                 <div>
@@ -176,7 +176,7 @@
                 </div>
             </xpath>
         </field>
-    </record> -->
+    </record>
     <record id="view_product_template_tree_brand" model="ir.ui.view">
         <field name="name">product tree view: add brand</field>
         <field name="model">product.template</field>

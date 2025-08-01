@@ -3,11 +3,8 @@
 
 from abc import abstractmethod
 from typing import Type
-
 from pydantic import BaseModel
-
 from odoo.addons.connector_search_engine.tools.serializer import ModelSerializer
-
 
 class PydanticModelSerializer(ModelSerializer):
     @abstractmethod
