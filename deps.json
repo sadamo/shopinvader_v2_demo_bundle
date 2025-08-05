@@ -1,0 +1,1389 @@
+{
+  "depends": {
+    "connector_elasticsearch": {
+      "depends": {
+        "connector_search_engine": {
+          "depends": {
+            "queue_job": {
+              "depends": {
+                "mail": {
+                  "depends": {},
+                  "external_python": [],
+                  "missing": false,
+                  "module": "mail",
+                  "core": true
+                },
+                "base_sparse_field": {
+                  "missing": true,
+                  "module": "base_sparse_field",
+                  "debug": "Manifest n\u00e3o encontrado para 'base_sparse_field'",
+                  "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+                },
+                "web": {
+                  "depends": {},
+                  "external_python": [],
+                  "missing": false,
+                  "module": "web",
+                  "core": true
+                }
+              },
+              "external_python": [
+                "requests"
+              ],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/queue_job/__manifest__.py"
+            },
+            "mail": {
+              "cycle": true,
+              "module": "mail"
+            },
+            "server_environment": {
+              "depends": {
+                "base": {
+                  "depends": {},
+                  "external_python": [],
+                  "missing": false,
+                  "module": "base",
+                  "core": true
+                },
+                "base_sparse_field": {
+                  "cycle": true,
+                  "module": "base_sparse_field"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/server_environment/__manifest__.py"
+            },
+            "base_partition": {
+              "depends": {
+                "base": {
+                  "cycle": true,
+                  "module": "base"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/base_partition/__manifest__.py"
+            }
+          },
+          "external_python": [
+            "unidecode",
+            "typing-extensions"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/connector_search_engine/__manifest__.py"
+        }
+      },
+      "external_python": [
+        "elasticsearch>=7.0.0,<=7.13.4",
+        "requests"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/connector_elasticsearch/__manifest__.py"
+    },
+    "fastapi": {
+      "depends": {
+        "endpoint_route_handler": {
+          "depends": {},
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/endpoint_route_handler/__manifest__.py"
+        }
+      },
+      "external_python": [
+        "fastapi>=0.110.0",
+        "python-multipart",
+        "ujson",
+        "a2wsgi>=1.10.6",
+        "parse-accept-language"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/fastapi/__manifest__.py"
+    },
+    "sale_channel_search_engine_category": {
+      "depends": {
+        "sale_channel_search_engine": {
+          "depends": {
+            "connector_search_engine": {
+              "cycle": true,
+              "module": "connector_search_engine"
+            },
+            "sale_channel": {
+              "depends": {
+                "sale_management": {
+                  "missing": true,
+                  "module": "sale_management",
+                  "debug": "Manifest n\u00e3o encontrado para 'sale_management'",
+                  "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_channel/__manifest__.py"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_channel_search_engine/__manifest__.py"
+        },
+        "sale_channel_category": {
+          "depends": {
+            "sale_channel": {
+              "cycle": true,
+              "module": "sale_channel"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_channel_category/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_channel_search_engine_category/__manifest__.py"
+    },
+    "sale_channel_search_engine_product": {
+      "depends": {
+        "sale_channel_search_engine": {
+          "cycle": true,
+          "module": "sale_channel_search_engine"
+        },
+        "sale_channel_product": {
+          "depends": {
+            "sale_channel": {
+              "cycle": true,
+              "module": "sale_channel"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_channel_product/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_channel_search_engine_product/__manifest__.py"
+    },
+    "shopinvader_anonymous_partner": {
+      "depends": {},
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_anonymous_partner/__manifest__.py"
+    },
+    "shopinvader_api_address": {
+      "depends": {
+        "extendable": {
+          "depends": {},
+          "external_python": [
+            "extendable>=0.0.4"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/extendable/__manifest__.py"
+        },
+        "extendable_fastapi": {
+          "depends": {
+            "fastapi": {
+              "cycle": true,
+              "module": "fastapi"
+            },
+            "extendable": {
+              "cycle": true,
+              "module": "extendable"
+            }
+          },
+          "external_python": [
+            "pydantic>=2.0.0",
+            "extendable-pydantic>=1.2.0"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/extendable_fastapi/__manifest__.py"
+        },
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "shopinvader_address": {
+          "depends": {
+            "sale": {
+              "missing": true,
+              "module": "sale",
+              "debug": "Manifest n\u00e3o encontrado para 'sale'",
+              "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_address/__manifest__.py"
+        },
+        "shopinvader_schema_address": {
+          "depends": {
+            "pydantic": {
+              "depends": {},
+              "external_python": [
+                "pydantic>=2.0.0",
+                "contextvars",
+                "typing-extensions"
+              ],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/pydantic/__manifest__.py"
+            },
+            "extendable": {
+              "cycle": true,
+              "module": "extendable"
+            },
+            "shopinvader_address": {
+              "cycle": true,
+              "module": "shopinvader_address"
+            }
+          },
+          "external_python": [
+            "extendable_pydantic>=1.2.0",
+            "pydantic>=2.0.0"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_schema_address/__manifest__.py"
+        }
+      },
+      "external_python": [
+        "fastapi",
+        "extendable_pydantic>=1.0.0",
+        "pydantic>=2.0.0"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_address/__manifest__.py"
+    },
+    "shopinvader_api_cart": {
+      "depends": {
+        "sale": {
+          "cycle": true,
+          "module": "sale"
+        },
+        "sale_cart": {
+          "depends": {
+            "sale": {
+              "cycle": true,
+              "module": "sale"
+            },
+            "sales_team": {
+              "missing": true,
+              "module": "sales_team",
+              "debug": "Manifest n\u00e3o encontrado para 'sales_team'",
+              "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+            }
+          },
+          "external_python": [
+            "openupgradelib"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_cart/__manifest__.py"
+        },
+        "sale_discount_display_amount": {
+          "depends": {
+            "sale_management": {
+              "cycle": true,
+              "module": "sale_management"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_discount_display_amount/__manifest__.py"
+        },
+        "pydantic": {
+          "cycle": true,
+          "module": "pydantic"
+        },
+        "extendable": {
+          "cycle": true,
+          "module": "extendable"
+        },
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "extendable_fastapi": {
+          "cycle": true,
+          "module": "extendable_fastapi"
+        },
+        "shopinvader_sale_cart": {
+          "depends": {
+            "sale": {
+              "cycle": true,
+              "module": "sale"
+            },
+            "sale_cart": {
+              "cycle": true,
+              "module": "sale_cart"
+            },
+            "onchange_helper": {
+              "depends": {
+                "web": {
+                  "cycle": true,
+                  "module": "web"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/onchange_helper/__manifest__.py"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_sale_cart/__manifest__.py"
+        },
+        "shopinvader_schema_address": {
+          "cycle": true,
+          "module": "shopinvader_schema_address"
+        },
+        "shopinvader_schema_sale": {
+          "depends": {
+            "sale_cart": {
+              "cycle": true,
+              "module": "sale_cart"
+            },
+            "sale_discount_display_amount": {
+              "cycle": true,
+              "module": "sale_discount_display_amount"
+            },
+            "shopinvader_schema_address": {
+              "cycle": true,
+              "module": "shopinvader_schema_address"
+            }
+          },
+          "external_python": [
+            "extendable_pydantic>=1.2.0",
+            "pydantic>=2.0.0"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_schema_sale/__manifest__.py"
+        },
+        "shopinvader_api_security_sale": {
+          "depends": {
+            "sale": {
+              "cycle": true,
+              "module": "sale"
+            },
+            "fastapi": {
+              "cycle": true,
+              "module": "fastapi"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_security_sale/__manifest__.py"
+        }
+      },
+      "external_python": [
+        "fastapi",
+        "pydantic>=2.0.0",
+        "extendable-pydantic>=1.2.0"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_cart/__manifest__.py"
+    },
+    "shopinvader_api_customer": {
+      "depends": {
+        "extendable_fastapi": {
+          "cycle": true,
+          "module": "extendable_fastapi"
+        },
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "mail": {
+          "cycle": true,
+          "module": "mail"
+        },
+        "product": {
+          "missing": true,
+          "module": "product",
+          "debug": "Manifest n\u00e3o encontrado para 'product'",
+          "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_customer/__manifest__.py"
+    },
+    "shopinvader_api_delivery_carrier": {
+      "depends": {
+        "delivery": {
+          "missing": true,
+          "module": "delivery",
+          "debug": "Manifest n\u00e3o encontrado para 'delivery'",
+          "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+        },
+        "delivery_carrier_info": {
+          "depends": {
+            "delivery": {
+              "cycle": true,
+              "module": "delivery"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/delivery_carrier_info/__manifest__.py"
+        },
+        "queue_job": {
+          "cycle": true,
+          "module": "queue_job"
+        },
+        "sale_shipping_info_helper": {
+          "depends": {
+            "sale": {
+              "cycle": true,
+              "module": "sale"
+            },
+            "delivery": {
+              "cycle": true,
+              "module": "delivery"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_shipping_info_helper/__manifest__.py"
+        },
+        "sale_discount_display_amount": {
+          "cycle": true,
+          "module": "sale_discount_display_amount"
+        },
+        "pydantic": {
+          "cycle": true,
+          "module": "pydantic"
+        },
+        "extendable": {
+          "cycle": true,
+          "module": "extendable"
+        },
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "extendable_fastapi": {
+          "cycle": true,
+          "module": "extendable_fastapi"
+        },
+        "shopinvader_api_cart": {
+          "cycle": true,
+          "module": "shopinvader_api_cart"
+        },
+        "shopinvader_api_security_sale": {
+          "cycle": true,
+          "module": "shopinvader_api_security_sale"
+        },
+        "shopinvader_delivery_carrier": {
+          "depends": {
+            "delivery": {
+              "cycle": true,
+              "module": "delivery"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_delivery_carrier/__manifest__.py"
+        },
+        "shopinvader_filtered_model": {
+          "depends": {
+            "base": {
+              "cycle": true,
+              "module": "base"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_filtered_model/__manifest__.py"
+        },
+        "shopinvader_sale_cart": {
+          "cycle": true,
+          "module": "shopinvader_sale_cart"
+        },
+        "shopinvader_schema_sale": {
+          "cycle": true,
+          "module": "shopinvader_schema_sale"
+        }
+      },
+      "external_python": [
+        "fastapi",
+        "pydantic>=2.0.0",
+        "extendable-pydantic>=1.2.0"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_delivery_carrier/__manifest__.py"
+    },
+    "shopinvader_api_payment_cart": {
+      "depends": {
+        "account_payment": {
+          "missing": true,
+          "module": "account_payment",
+          "debug": "Manifest n\u00e3o encontrado para 'account_payment'",
+          "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+        },
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "sale_cart": {
+          "cycle": true,
+          "module": "sale_cart"
+        },
+        "shopinvader_api_payment": {
+          "depends": {
+            "fastapi": {
+              "cycle": true,
+              "module": "fastapi"
+            },
+            "payment": {
+              "missing": true,
+              "module": "payment",
+              "debug": "Manifest n\u00e3o encontrado para 'payment'",
+              "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+            },
+            "pydantic": {
+              "cycle": true,
+              "module": "pydantic"
+            },
+            "extendable": {
+              "cycle": true,
+              "module": "extendable"
+            },
+            "extendable_fastapi": {
+              "cycle": true,
+              "module": "extendable_fastapi"
+            }
+          },
+          "external_python": [
+            "fastapi",
+            "pydantic>=2.0.0",
+            "extendable-pydantic>=1.2.0",
+            "pyjwt"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_payment/__manifest__.py"
+        },
+        "shopinvader_api_cart": {
+          "cycle": true,
+          "module": "shopinvader_api_cart"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_payment_cart/__manifest__.py"
+    },
+    "shopinvader_api_payment_provider_custom": {
+      "depends": {
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "shopinvader_api_payment": {
+          "cycle": true,
+          "module": "shopinvader_api_payment"
+        },
+        "payment_custom": {
+          "missing": true,
+          "module": "payment_custom",
+          "debug": "Manifest n\u00e3o encontrado para 'payment_custom'",
+          "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_payment_provider_custom/__manifest__.py"
+    },
+    "shopinvader_api_payment_provider_sips": {
+      "depends": {
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "shopinvader_api_payment": {
+          "cycle": true,
+          "module": "shopinvader_api_payment"
+        },
+        "payment_sips": {
+          "missing": true,
+          "module": "payment_sips",
+          "debug": "Manifest n\u00e3o encontrado para 'payment_sips'",
+          "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_payment_provider_sips/__manifest__.py"
+    },
+    "shopinvader_api_payment_provider_stripe": {
+      "depends": {
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "shopinvader_api_payment": {
+          "cycle": true,
+          "module": "shopinvader_api_payment"
+        },
+        "payment_stripe": {
+          "missing": true,
+          "module": "payment_stripe",
+          "debug": "Manifest n\u00e3o encontrado para 'payment_stripe'",
+          "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_payment_provider_stripe/__manifest__.py"
+    },
+    "shopinvader_api_sale_loyalty": {
+      "depends": {
+        "sale_loyalty": {
+          "missing": true,
+          "module": "sale_loyalty",
+          "debug": "Manifest n\u00e3o encontrado para 'sale_loyalty'",
+          "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+        },
+        "sale_loyalty_order_info": {
+          "depends": {
+            "sale_loyalty": {
+              "cycle": true,
+              "module": "sale_loyalty"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_loyalty_order_info/__manifest__.py"
+        },
+        "shopinvader_api_cart": {
+          "cycle": true,
+          "module": "shopinvader_api_cart"
+        },
+        "shopinvader_api_security_sale": {
+          "cycle": true,
+          "module": "shopinvader_api_security_sale"
+        },
+        "shopinvader_schema_sale": {
+          "cycle": true,
+          "module": "shopinvader_schema_sale"
+        },
+        "pydantic": {
+          "cycle": true,
+          "module": "pydantic"
+        },
+        "extendable": {
+          "cycle": true,
+          "module": "extendable"
+        },
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "extendable_fastapi": {
+          "cycle": true,
+          "module": "extendable_fastapi"
+        }
+      },
+      "external_python": [
+        "fastapi",
+        "pydantic>=2.0.0",
+        "extendable-pydantic>=1.2.0"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_sale_loyalty/__manifest__.py"
+    },
+    "shopinvader_api_sale": {
+      "depends": {
+        "shopinvader_schema_sale": {
+          "cycle": true,
+          "module": "shopinvader_schema_sale"
+        },
+        "shopinvader_api_security_sale": {
+          "cycle": true,
+          "module": "shopinvader_api_security_sale"
+        },
+        "shopinvader_filtered_model": {
+          "cycle": true,
+          "module": "shopinvader_filtered_model"
+        },
+        "extendable_fastapi": {
+          "cycle": true,
+          "module": "extendable_fastapi"
+        },
+        "report_generate_helper": {
+          "depends": {
+            "base": {
+              "cycle": true,
+              "module": "base"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/report_generate_helper/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_sale/__manifest__.py"
+    },
+    "shopinvader_api_settings": {
+      "depends": {
+        "extendable": {
+          "cycle": true,
+          "module": "extendable"
+        },
+        "extendable_fastapi": {
+          "cycle": true,
+          "module": "extendable_fastapi"
+        },
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        }
+      },
+      "external_python": [
+        "fastapi",
+        "extendable_pydantic>=1.0.0",
+        "pydantic>=2.0.0"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_settings/__manifest__.py"
+    },
+    "shopinvader_api_signin_jwt": {
+      "depends": {
+        "fastapi_auth_jwt": {
+          "depends": {
+            "fastapi": {
+              "cycle": true,
+              "module": "fastapi"
+            },
+            "auth_jwt": {
+              "depends": {},
+              "external_python": [
+                "pyjwt",
+                "cryptography"
+              ],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/auth_jwt/__manifest__.py"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/fastapi_auth_jwt/__manifest__.py"
+        },
+        "shopinvader_anonymous_partner": {
+          "cycle": true,
+          "module": "shopinvader_anonymous_partner"
+        },
+        "shopinvader_sale_cart": {
+          "cycle": true,
+          "module": "shopinvader_sale_cart"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_signin_jwt/__manifest__.py"
+    },
+    "shopinvader_api_wishlist": {
+      "depends": {
+        "fastapi": {
+          "cycle": true,
+          "module": "fastapi"
+        },
+        "sale_wishlist": {
+          "depends": {
+            "sale_product_set": {
+              "depends": {
+                "sale": {
+                  "cycle": true,
+                  "module": "sale"
+                },
+                "sale_management": {
+                  "cycle": true,
+                  "module": "sale_management"
+                },
+                "product_set": {
+                  "missing": true,
+                  "module": "product_set",
+                  "debug": "Manifest n\u00e3o encontrado para 'product_set'",
+                  "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_product_set/__manifest__.py"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/sale_wishlist/__manifest__.py"
+        },
+        "extendable_fastapi": {
+          "cycle": true,
+          "module": "extendable_fastapi"
+        },
+        "shopinvader_api_security_sale": {
+          "cycle": true,
+          "module": "shopinvader_api_security_sale"
+        },
+        "shopinvader_schema_sale": {
+          "cycle": true,
+          "module": "shopinvader_schema_sale"
+        },
+        "shopinvader_sale_cart": {
+          "cycle": true,
+          "module": "shopinvader_sale_cart"
+        },
+        "shopinvader_filtered_model": {
+          "cycle": true,
+          "module": "shopinvader_filtered_model"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_api_wishlist/__manifest__.py"
+    },
+    "shopinvader_fastapi_auth_jwt": {
+      "depends": {
+        "fastapi_auth_jwt": {
+          "cycle": true,
+          "module": "fastapi_auth_jwt"
+        },
+        "shopinvader_anonymous_partner": {
+          "cycle": true,
+          "module": "shopinvader_anonymous_partner"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_fastapi_auth_jwt/__manifest__.py"
+    },
+    "shopinvader_product_brand_tag": {
+      "depends": {
+        "shopinvader_product_brand": {
+          "depends": {
+            "product_brand": {
+              "depends": {
+                "sale": {
+                  "cycle": true,
+                  "module": "sale"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/product_brand/__manifest__.py"
+            },
+            "shopinvader_base_url": {
+              "depends": {
+                "base": {
+                  "cycle": true,
+                  "module": "base"
+                },
+                "base_sparse_field_list_support": {
+                  "depends": {
+                    "base": {
+                      "cycle": true,
+                      "module": "base"
+                    },
+                    "base_sparse_field": {
+                      "cycle": true,
+                      "module": "base_sparse_field"
+                    }
+                  },
+                  "external_python": [],
+                  "missing": false,
+                  "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/base_sparse_field_list_support/__manifest__.py"
+                }
+              },
+              "external_python": [
+                "python-slugify"
+              ],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_base_url/__manifest__.py"
+            },
+            "shopinvader_product": {
+              "depends": {
+                "base_sparse_field": {
+                  "cycle": true,
+                  "module": "base_sparse_field"
+                },
+                "product": {
+                  "cycle": true,
+                  "module": "product"
+                },
+                "pydantic": {
+                  "cycle": true,
+                  "module": "pydantic"
+                },
+                "extendable": {
+                  "cycle": true,
+                  "module": "extendable"
+                }
+              },
+              "external_python": [
+                "extendable_pydantic>=1.2.0",
+                "pydantic>=2.0.0",
+                "unidecode"
+              ],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_product/__manifest__.py"
+            },
+            "shopinvader_product_seo": {
+              "depends": {
+                "shopinvader_product": {
+                  "cycle": true,
+                  "module": "shopinvader_product"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_product_seo/__manifest__.py"
+            }
+          },
+          "external_python": [
+            "extendable_pydantic>=1.2.0"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_product_brand/__manifest__.py"
+        },
+        "product_brand_tag": {
+          "depends": {
+            "product_brand": {
+              "cycle": true,
+              "module": "product_brand"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/product_brand_tag/__manifest__.py"
+        }
+      },
+      "external_python": [
+        "extendable_pydantic>=1.2.0"
+      ],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_product_brand_tag/__manifest__.py"
+    },
+    "shopinvader_product_brand": {
+      "cycle": true,
+      "module": "shopinvader_product_brand"
+    },
+    "shopinvader_product_description": {
+      "depends": {
+        "product_sale_description": {
+          "depends": {
+            "product": {
+              "cycle": true,
+              "module": "product"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/product_sale_description/__manifest__.py"
+        },
+        "shopinvader_product": {
+          "cycle": true,
+          "module": "shopinvader_product"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_product_description/__manifest__.py"
+    },
+    "shopinvader_product_seo": {
+      "cycle": true,
+      "module": "shopinvader_product_seo"
+    },
+    "shopinvader_product_url": {
+      "depends": {
+        "shopinvader_base_url": {
+          "cycle": true,
+          "module": "shopinvader_base_url"
+        },
+        "shopinvader_product": {
+          "cycle": true,
+          "module": "shopinvader_product"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_product_url/__manifest__.py"
+    },
+    "shopinvader_product": {
+      "cycle": true,
+      "module": "shopinvader_product"
+    },
+    "shopinvader_search_engine_image": {
+      "depends": {
+        "shopinvader_search_engine": {
+          "depends": {
+            "search_engine_serializer_pydantic": {
+              "depends": {
+                "connector_search_engine": {
+                  "cycle": true,
+                  "module": "connector_search_engine"
+                },
+                "pydantic": {
+                  "cycle": true,
+                  "module": "pydantic"
+                }
+              },
+              "external_python": [
+                "pydantic"
+              ],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/search_engine_serializer_pydantic/__manifest__.py"
+            },
+            "shopinvader_product": {
+              "cycle": true,
+              "module": "shopinvader_product"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine/__manifest__.py"
+        },
+        "search_engine_image_thumbnail": {
+          "depends": {
+            "base_partition": {
+              "cycle": true,
+              "module": "base_partition"
+            },
+            "connector_search_engine": {
+              "cycle": true,
+              "module": "connector_search_engine"
+            },
+            "fs_image_thumbnail": {
+              "depends": {
+                "fs_image": {
+                  "missing": true,
+                  "module": "fs_image",
+                  "debug": "Manifest n\u00e3o encontrado para 'fs_image'",
+                  "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+                },
+                "base_partition": {
+                  "cycle": true,
+                  "module": "base_partition"
+                }
+              },
+              "external_python": [
+                "python_slugify"
+              ],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/fs_image_thumbnail/__manifest__.py"
+            },
+            "fs_base_multi_image": {
+              "depends": {
+                "fs_image": {
+                  "cycle": true,
+                  "module": "fs_image"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/fs_base_multi_image/__manifest__.py"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/search_engine_image_thumbnail/__manifest__.py"
+        },
+        "fs_product_multi_image": {
+          "depends": {
+            "fs_base_multi_image": {
+              "cycle": true,
+              "module": "fs_base_multi_image"
+            },
+            "product": {
+              "cycle": true,
+              "module": "product"
+            },
+            "sales_team": {
+              "cycle": true,
+              "module": "sales_team"
+            },
+            "image_tag": {
+              "depends": {
+                "server_environment": {
+                  "cycle": true,
+                  "module": "server_environment"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/image_tag/__manifest__.py"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/fs_product_multi_image/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_image/__manifest__.py"
+    },
+    "shopinvader_search_engine_product_brand_image": {
+      "depends": {
+        "shopinvader_product_brand": {
+          "cycle": true,
+          "module": "shopinvader_product_brand"
+        },
+        "shopinvader_search_engine_image": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_image"
+        },
+        "shopinvader_search_engine_product_brand": {
+          "depends": {
+            "shopinvader_product_brand": {
+              "cycle": true,
+              "module": "shopinvader_product_brand"
+            },
+            "shopinvader_search_engine": {
+              "cycle": true,
+              "module": "shopinvader_search_engine"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_product_brand/__manifest__.py"
+        },
+        "fs_product_brand_multi_image": {
+          "depends": {
+            "fs_base_multi_image": {
+              "cycle": true,
+              "module": "fs_base_multi_image"
+            },
+            "product_brand": {
+              "cycle": true,
+              "module": "product_brand"
+            },
+            "sales_team": {
+              "cycle": true,
+              "module": "sales_team"
+            },
+            "image_tag": {
+              "cycle": true,
+              "module": "image_tag"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/fs_product_brand_multi_image/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_product_brand_image/__manifest__.py"
+    },
+    "shopinvader_search_engine_product_price": {
+      "depends": {
+        "product_get_price_helper": {
+          "depends": {
+            "account": {
+              "missing": true,
+              "module": "account",
+              "debug": "Manifest n\u00e3o encontrado para 'account'",
+              "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+            },
+            "product": {
+              "cycle": true,
+              "module": "product"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/product_get_price_helper/__manifest__.py"
+        },
+        "shopinvader_search_engine": {
+          "cycle": true,
+          "module": "shopinvader_search_engine"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_product_price/__manifest__.py"
+    },
+    "shopinvader_search_engine_product_stock_state": {
+      "depends": {
+        "product_stock_state": {
+          "depends": {
+            "sale_stock": {
+              "missing": true,
+              "module": "sale_stock",
+              "debug": "Manifest n\u00e3o encontrado para 'sale_stock'",
+              "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/product_stock_state/__manifest__.py"
+        },
+        "shopinvader_search_engine_product_stock": {
+          "depends": {
+            "stock": {
+              "missing": true,
+              "module": "stock",
+              "debug": "Manifest n\u00e3o encontrado para 'stock'",
+              "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+            },
+            "shopinvader_search_engine": {
+              "cycle": true,
+              "module": "shopinvader_search_engine"
+            }
+          },
+          "external_python": [
+            "slugify"
+          ],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_product_stock/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_product_stock_state/__manifest__.py"
+    },
+    "shopinvader_search_engine_update_image": {
+      "depends": {
+        "shopinvader_search_engine_image": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_image"
+        },
+        "shopinvader_search_engine_update": {
+          "depends": {
+            "shopinvader_search_engine": {
+              "cycle": true,
+              "module": "shopinvader_search_engine"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_update/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_update_image/__manifest__.py"
+    },
+    "shopinvader_search_engine_update_product_brand_image": {
+      "depends": {
+        "shopinvader_search_engine_update": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_update"
+        },
+        "shopinvader_search_engine_product_brand_image": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_product_brand_image"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_update_product_brand_image/__manifest__.py"
+    },
+    "shopinvader_search_engine_update_product_brand": {
+      "depends": {
+        "shopinvader_search_engine_update": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_update"
+        },
+        "shopinvader_search_engine_product_brand": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_product_brand"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_update_product_brand/__manifest__.py"
+    },
+    "shopinvader_search_engine_update_product_media": {
+      "depends": {
+        "shopinvader_search_engine_update": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_update"
+        },
+        "shopinvader_search_engine_product_media": {
+          "depends": {
+            "shopinvader_product": {
+              "cycle": true,
+              "module": "shopinvader_product"
+            },
+            "shopinvader_search_engine": {
+              "cycle": true,
+              "module": "shopinvader_search_engine"
+            },
+            "fs_product_multi_media": {
+              "depends": {
+                "fs_base_multi_media": {
+                  "missing": true,
+                  "module": "fs_base_multi_media",
+                  "debug": "Manifest n\u00e3o encontrado para 'fs_base_multi_media'",
+                  "search_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle"
+                },
+                "product": {
+                  "cycle": true,
+                  "module": "product"
+                },
+                "sales_team": {
+                  "cycle": true,
+                  "module": "sales_team"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/fs_product_multi_media/__manifest__.py"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_product_media/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_update_product_media/__manifest__.py"
+    },
+    "shopinvader_search_engine_update_product_template_multi_link": {
+      "depends": {
+        "shopinvader_search_engine_update": {
+          "cycle": true,
+          "module": "shopinvader_search_engine_update"
+        },
+        "shopinvader_search_engine_product_template_multi_link": {
+          "depends": {
+            "shopinvader_search_engine": {
+              "cycle": true,
+              "module": "shopinvader_search_engine"
+            },
+            "product_template_multi_link": {
+              "depends": {
+                "sale": {
+                  "cycle": true,
+                  "module": "sale"
+                }
+              },
+              "external_python": [],
+              "missing": false,
+              "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/product_template_multi_link/__manifest__.py"
+            },
+            "base_sparse_field": {
+              "cycle": true,
+              "module": "base_sparse_field"
+            }
+          },
+          "external_python": [],
+          "missing": false,
+          "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_product_template_multi_link/__manifest__.py"
+        }
+      },
+      "external_python": [],
+      "missing": false,
+      "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_search_engine_update_product_template_multi_link/__manifest__.py"
+    },
+    "shopinvader_search_engine": {
+      "cycle": true,
+      "module": "shopinvader_search_engine"
+    }
+  },
+  "external_python": [
+    "fastapi"
+  ],
+  "missing": false,
+  "manifest_path": "/home/sadamo/kmee/projetos/odoo17/addons/express-sign/shopinvader_v2_demo_bundle/shopinvader_v2_app_demo/__manifest__.py"
+}

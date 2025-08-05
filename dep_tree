@@ -1,0 +1,610 @@
+// Árvore de dependências
+digraph {
+	shopinvader_v2_app_demo [label=shopinvader_v2_app_demo color=black]
+	"(python) fastapi" [label="(python) fastapi" color=blue shape=box]
+	shopinvader_v2_app_demo -> "(python) fastapi"
+	connector_elasticsearch [label=connector_elasticsearch color=black]
+	shopinvader_v2_app_demo -> connector_elasticsearch
+	"(python) elasticsearch>=7.0.0,<=7.13.4" [label="(python) elasticsearch>=7.0.0,<=7.13.4" color=blue shape=box]
+	connector_elasticsearch -> "(python) elasticsearch>=7.0.0,<=7.13.4"
+	"(python) requests" [label="(python) requests" color=blue shape=box]
+	connector_elasticsearch -> "(python) requests"
+	connector_search_engine [label=connector_search_engine color=black]
+	connector_elasticsearch -> connector_search_engine
+	"(python) unidecode" [label="(python) unidecode" color=blue shape=box]
+	connector_search_engine -> "(python) unidecode"
+	"(python) typing-extensions" [label="(python) typing-extensions" color=blue shape=box]
+	connector_search_engine -> "(python) typing-extensions"
+	queue_job [label=queue_job color=black]
+	connector_search_engine -> queue_job
+	"(python) requests" [label="(python) requests" color=blue shape=box]
+	queue_job -> "(python) requests"
+	mail [label=mail color=black]
+	queue_job -> mail
+	"base_sparse_field [MISSING]" [label="base_sparse_field [MISSING]" color=red]
+	queue_job -> "base_sparse_field [MISSING]"
+	web [label=web color=black]
+	queue_job -> web
+	mail [label=mail color=black]
+	connector_search_engine -> mail
+	server_environment [label=server_environment color=black]
+	connector_search_engine -> server_environment
+	base [label=base color=black]
+	server_environment -> base
+	base_sparse_field [label=base_sparse_field color=black]
+	server_environment -> base_sparse_field
+	base_partition [label=base_partition color=black]
+	connector_search_engine -> base_partition
+	base [label=base color=black]
+	base_partition -> base
+	fastapi [label=fastapi color=black]
+	shopinvader_v2_app_demo -> fastapi
+	"(python) fastapi>=0.110.0" [label="(python) fastapi>=0.110.0" color=blue shape=box]
+	fastapi -> "(python) fastapi>=0.110.0"
+	"(python) python-multipart" [label="(python) python-multipart" color=blue shape=box]
+	fastapi -> "(python) python-multipart"
+	"(python) ujson" [label="(python) ujson" color=blue shape=box]
+	fastapi -> "(python) ujson"
+	"(python) a2wsgi>=1.10.6" [label="(python) a2wsgi>=1.10.6" color=blue shape=box]
+	fastapi -> "(python) a2wsgi>=1.10.6"
+	"(python) parse-accept-language" [label="(python) parse-accept-language" color=blue shape=box]
+	fastapi -> "(python) parse-accept-language"
+	endpoint_route_handler [label=endpoint_route_handler color=black]
+	fastapi -> endpoint_route_handler
+	sale_channel_search_engine_category [label=sale_channel_search_engine_category color=black]
+	shopinvader_v2_app_demo -> sale_channel_search_engine_category
+	sale_channel_search_engine [label=sale_channel_search_engine color=black]
+	sale_channel_search_engine_category -> sale_channel_search_engine
+	connector_search_engine [label=connector_search_engine color=black]
+	sale_channel_search_engine -> connector_search_engine
+	sale_channel [label=sale_channel color=black]
+	sale_channel_search_engine -> sale_channel
+	"sale_management [MISSING]" [label="sale_management [MISSING]" color=red]
+	sale_channel -> "sale_management [MISSING]"
+	sale_channel_category [label=sale_channel_category color=black]
+	sale_channel_search_engine_category -> sale_channel_category
+	sale_channel [label=sale_channel color=black]
+	sale_channel_category -> sale_channel
+	sale_channel_search_engine_product [label=sale_channel_search_engine_product color=black]
+	shopinvader_v2_app_demo -> sale_channel_search_engine_product
+	sale_channel_search_engine [label=sale_channel_search_engine color=black]
+	sale_channel_search_engine_product -> sale_channel_search_engine
+	sale_channel_product [label=sale_channel_product color=black]
+	sale_channel_search_engine_product -> sale_channel_product
+	sale_channel [label=sale_channel color=black]
+	sale_channel_product -> sale_channel
+	shopinvader_anonymous_partner [label=shopinvader_anonymous_partner color=black]
+	shopinvader_v2_app_demo -> shopinvader_anonymous_partner
+	shopinvader_api_address [label=shopinvader_api_address color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_address
+	"(python) fastapi" [label="(python) fastapi" color=blue shape=box]
+	shopinvader_api_address -> "(python) fastapi"
+	"(python) extendable_pydantic>=1.0.0" [label="(python) extendable_pydantic>=1.0.0" color=blue shape=box]
+	shopinvader_api_address -> "(python) extendable_pydantic>=1.0.0"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_api_address -> "(python) pydantic>=2.0.0"
+	extendable [label=extendable color=black]
+	shopinvader_api_address -> extendable
+	"(python) extendable>=0.0.4" [label="(python) extendable>=0.0.4" color=blue shape=box]
+	extendable -> "(python) extendable>=0.0.4"
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_address -> extendable_fastapi
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	extendable_fastapi -> "(python) pydantic>=2.0.0"
+	"(python) extendable-pydantic>=1.2.0" [label="(python) extendable-pydantic>=1.2.0" color=blue shape=box]
+	extendable_fastapi -> "(python) extendable-pydantic>=1.2.0"
+	fastapi [label=fastapi color=black]
+	extendable_fastapi -> fastapi
+	extendable [label=extendable color=black]
+	extendable_fastapi -> extendable
+	fastapi [label=fastapi color=black]
+	shopinvader_api_address -> fastapi
+	shopinvader_address [label=shopinvader_address color=black]
+	shopinvader_api_address -> shopinvader_address
+	"sale [MISSING]" [label="sale [MISSING]" color=red]
+	shopinvader_address -> "sale [MISSING]"
+	shopinvader_schema_address [label=shopinvader_schema_address color=black]
+	shopinvader_api_address -> shopinvader_schema_address
+	"(python) extendable_pydantic>=1.2.0" [label="(python) extendable_pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_schema_address -> "(python) extendable_pydantic>=1.2.0"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_schema_address -> "(python) pydantic>=2.0.0"
+	pydantic [label=pydantic color=black]
+	shopinvader_schema_address -> pydantic
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	pydantic -> "(python) pydantic>=2.0.0"
+	"(python) contextvars" [label="(python) contextvars" color=blue shape=box]
+	pydantic -> "(python) contextvars"
+	"(python) typing-extensions" [label="(python) typing-extensions" color=blue shape=box]
+	pydantic -> "(python) typing-extensions"
+	extendable [label=extendable color=black]
+	shopinvader_schema_address -> extendable
+	shopinvader_address [label=shopinvader_address color=black]
+	shopinvader_schema_address -> shopinvader_address
+	shopinvader_api_cart [label=shopinvader_api_cart color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_cart
+	"(python) fastapi" [label="(python) fastapi" color=blue shape=box]
+	shopinvader_api_cart -> "(python) fastapi"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_api_cart -> "(python) pydantic>=2.0.0"
+	"(python) extendable-pydantic>=1.2.0" [label="(python) extendable-pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_api_cart -> "(python) extendable-pydantic>=1.2.0"
+	sale [label=sale color=black]
+	shopinvader_api_cart -> sale
+	sale_cart [label=sale_cart color=black]
+	shopinvader_api_cart -> sale_cart
+	"(python) openupgradelib" [label="(python) openupgradelib" color=blue shape=box]
+	sale_cart -> "(python) openupgradelib"
+	sale [label=sale color=black]
+	sale_cart -> sale
+	"sales_team [MISSING]" [label="sales_team [MISSING]" color=red]
+	sale_cart -> "sales_team [MISSING]"
+	sale_discount_display_amount [label=sale_discount_display_amount color=black]
+	shopinvader_api_cart -> sale_discount_display_amount
+	sale_management [label=sale_management color=black]
+	sale_discount_display_amount -> sale_management
+	pydantic [label=pydantic color=black]
+	shopinvader_api_cart -> pydantic
+	extendable [label=extendable color=black]
+	shopinvader_api_cart -> extendable
+	fastapi [label=fastapi color=black]
+	shopinvader_api_cart -> fastapi
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_cart -> extendable_fastapi
+	shopinvader_sale_cart [label=shopinvader_sale_cart color=black]
+	shopinvader_api_cart -> shopinvader_sale_cart
+	sale [label=sale color=black]
+	shopinvader_sale_cart -> sale
+	sale_cart [label=sale_cart color=black]
+	shopinvader_sale_cart -> sale_cart
+	onchange_helper [label=onchange_helper color=black]
+	shopinvader_sale_cart -> onchange_helper
+	web [label=web color=black]
+	onchange_helper -> web
+	shopinvader_schema_address [label=shopinvader_schema_address color=black]
+	shopinvader_api_cart -> shopinvader_schema_address
+	shopinvader_schema_sale [label=shopinvader_schema_sale color=black]
+	shopinvader_api_cart -> shopinvader_schema_sale
+	"(python) extendable_pydantic>=1.2.0" [label="(python) extendable_pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_schema_sale -> "(python) extendable_pydantic>=1.2.0"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_schema_sale -> "(python) pydantic>=2.0.0"
+	sale_cart [label=sale_cart color=black]
+	shopinvader_schema_sale -> sale_cart
+	sale_discount_display_amount [label=sale_discount_display_amount color=black]
+	shopinvader_schema_sale -> sale_discount_display_amount
+	shopinvader_schema_address [label=shopinvader_schema_address color=black]
+	shopinvader_schema_sale -> shopinvader_schema_address
+	shopinvader_api_security_sale [label=shopinvader_api_security_sale color=black]
+	shopinvader_api_cart -> shopinvader_api_security_sale
+	sale [label=sale color=black]
+	shopinvader_api_security_sale -> sale
+	fastapi [label=fastapi color=black]
+	shopinvader_api_security_sale -> fastapi
+	shopinvader_api_customer [label=shopinvader_api_customer color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_customer
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_customer -> extendable_fastapi
+	fastapi [label=fastapi color=black]
+	shopinvader_api_customer -> fastapi
+	mail [label=mail color=black]
+	shopinvader_api_customer -> mail
+	"product [MISSING]" [label="product [MISSING]" color=red]
+	shopinvader_api_customer -> "product [MISSING]"
+	shopinvader_api_delivery_carrier [label=shopinvader_api_delivery_carrier color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_delivery_carrier
+	"(python) fastapi" [label="(python) fastapi" color=blue shape=box]
+	shopinvader_api_delivery_carrier -> "(python) fastapi"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_api_delivery_carrier -> "(python) pydantic>=2.0.0"
+	"(python) extendable-pydantic>=1.2.0" [label="(python) extendable-pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_api_delivery_carrier -> "(python) extendable-pydantic>=1.2.0"
+	"delivery [MISSING]" [label="delivery [MISSING]" color=red]
+	shopinvader_api_delivery_carrier -> "delivery [MISSING]"
+	delivery_carrier_info [label=delivery_carrier_info color=black]
+	shopinvader_api_delivery_carrier -> delivery_carrier_info
+	delivery [label=delivery color=black]
+	delivery_carrier_info -> delivery
+	queue_job [label=queue_job color=black]
+	shopinvader_api_delivery_carrier -> queue_job
+	sale_shipping_info_helper [label=sale_shipping_info_helper color=black]
+	shopinvader_api_delivery_carrier -> sale_shipping_info_helper
+	sale [label=sale color=black]
+	sale_shipping_info_helper -> sale
+	delivery [label=delivery color=black]
+	sale_shipping_info_helper -> delivery
+	sale_discount_display_amount [label=sale_discount_display_amount color=black]
+	shopinvader_api_delivery_carrier -> sale_discount_display_amount
+	pydantic [label=pydantic color=black]
+	shopinvader_api_delivery_carrier -> pydantic
+	extendable [label=extendable color=black]
+	shopinvader_api_delivery_carrier -> extendable
+	fastapi [label=fastapi color=black]
+	shopinvader_api_delivery_carrier -> fastapi
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_delivery_carrier -> extendable_fastapi
+	shopinvader_api_cart [label=shopinvader_api_cart color=black]
+	shopinvader_api_delivery_carrier -> shopinvader_api_cart
+	shopinvader_api_security_sale [label=shopinvader_api_security_sale color=black]
+	shopinvader_api_delivery_carrier -> shopinvader_api_security_sale
+	shopinvader_delivery_carrier [label=shopinvader_delivery_carrier color=black]
+	shopinvader_api_delivery_carrier -> shopinvader_delivery_carrier
+	delivery [label=delivery color=black]
+	shopinvader_delivery_carrier -> delivery
+	shopinvader_filtered_model [label=shopinvader_filtered_model color=black]
+	shopinvader_api_delivery_carrier -> shopinvader_filtered_model
+	base [label=base color=black]
+	shopinvader_filtered_model -> base
+	shopinvader_sale_cart [label=shopinvader_sale_cart color=black]
+	shopinvader_api_delivery_carrier -> shopinvader_sale_cart
+	shopinvader_schema_sale [label=shopinvader_schema_sale color=black]
+	shopinvader_api_delivery_carrier -> shopinvader_schema_sale
+	shopinvader_api_payment_cart [label=shopinvader_api_payment_cart color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_payment_cart
+	"account_payment [MISSING]" [label="account_payment [MISSING]" color=red]
+	shopinvader_api_payment_cart -> "account_payment [MISSING]"
+	fastapi [label=fastapi color=black]
+	shopinvader_api_payment_cart -> fastapi
+	sale_cart [label=sale_cart color=black]
+	shopinvader_api_payment_cart -> sale_cart
+	shopinvader_api_payment [label=shopinvader_api_payment color=black]
+	shopinvader_api_payment_cart -> shopinvader_api_payment
+	"(python) fastapi" [label="(python) fastapi" color=blue shape=box]
+	shopinvader_api_payment -> "(python) fastapi"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_api_payment -> "(python) pydantic>=2.0.0"
+	"(python) extendable-pydantic>=1.2.0" [label="(python) extendable-pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_api_payment -> "(python) extendable-pydantic>=1.2.0"
+	"(python) pyjwt" [label="(python) pyjwt" color=blue shape=box]
+	shopinvader_api_payment -> "(python) pyjwt"
+	fastapi [label=fastapi color=black]
+	shopinvader_api_payment -> fastapi
+	"payment [MISSING]" [label="payment [MISSING]" color=red]
+	shopinvader_api_payment -> "payment [MISSING]"
+	pydantic [label=pydantic color=black]
+	shopinvader_api_payment -> pydantic
+	extendable [label=extendable color=black]
+	shopinvader_api_payment -> extendable
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_payment -> extendable_fastapi
+	shopinvader_api_cart [label=shopinvader_api_cart color=black]
+	shopinvader_api_payment_cart -> shopinvader_api_cart
+	shopinvader_api_payment_provider_custom [label=shopinvader_api_payment_provider_custom color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_payment_provider_custom
+	fastapi [label=fastapi color=black]
+	shopinvader_api_payment_provider_custom -> fastapi
+	shopinvader_api_payment [label=shopinvader_api_payment color=black]
+	shopinvader_api_payment_provider_custom -> shopinvader_api_payment
+	"payment_custom [MISSING]" [label="payment_custom [MISSING]" color=red]
+	shopinvader_api_payment_provider_custom -> "payment_custom [MISSING]"
+	shopinvader_api_payment_provider_sips [label=shopinvader_api_payment_provider_sips color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_payment_provider_sips
+	fastapi [label=fastapi color=black]
+	shopinvader_api_payment_provider_sips -> fastapi
+	shopinvader_api_payment [label=shopinvader_api_payment color=black]
+	shopinvader_api_payment_provider_sips -> shopinvader_api_payment
+	"payment_sips [MISSING]" [label="payment_sips [MISSING]" color=red]
+	shopinvader_api_payment_provider_sips -> "payment_sips [MISSING]"
+	shopinvader_api_payment_provider_stripe [label=shopinvader_api_payment_provider_stripe color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_payment_provider_stripe
+	fastapi [label=fastapi color=black]
+	shopinvader_api_payment_provider_stripe -> fastapi
+	shopinvader_api_payment [label=shopinvader_api_payment color=black]
+	shopinvader_api_payment_provider_stripe -> shopinvader_api_payment
+	"payment_stripe [MISSING]" [label="payment_stripe [MISSING]" color=red]
+	shopinvader_api_payment_provider_stripe -> "payment_stripe [MISSING]"
+	shopinvader_api_sale_loyalty [label=shopinvader_api_sale_loyalty color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_sale_loyalty
+	"(python) fastapi" [label="(python) fastapi" color=blue shape=box]
+	shopinvader_api_sale_loyalty -> "(python) fastapi"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_api_sale_loyalty -> "(python) pydantic>=2.0.0"
+	"(python) extendable-pydantic>=1.2.0" [label="(python) extendable-pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_api_sale_loyalty -> "(python) extendable-pydantic>=1.2.0"
+	"sale_loyalty [MISSING]" [label="sale_loyalty [MISSING]" color=red]
+	shopinvader_api_sale_loyalty -> "sale_loyalty [MISSING]"
+	sale_loyalty_order_info [label=sale_loyalty_order_info color=black]
+	shopinvader_api_sale_loyalty -> sale_loyalty_order_info
+	sale_loyalty [label=sale_loyalty color=black]
+	sale_loyalty_order_info -> sale_loyalty
+	shopinvader_api_cart [label=shopinvader_api_cart color=black]
+	shopinvader_api_sale_loyalty -> shopinvader_api_cart
+	shopinvader_api_security_sale [label=shopinvader_api_security_sale color=black]
+	shopinvader_api_sale_loyalty -> shopinvader_api_security_sale
+	shopinvader_schema_sale [label=shopinvader_schema_sale color=black]
+	shopinvader_api_sale_loyalty -> shopinvader_schema_sale
+	pydantic [label=pydantic color=black]
+	shopinvader_api_sale_loyalty -> pydantic
+	extendable [label=extendable color=black]
+	shopinvader_api_sale_loyalty -> extendable
+	fastapi [label=fastapi color=black]
+	shopinvader_api_sale_loyalty -> fastapi
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_sale_loyalty -> extendable_fastapi
+	shopinvader_api_sale [label=shopinvader_api_sale color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_sale
+	shopinvader_schema_sale [label=shopinvader_schema_sale color=black]
+	shopinvader_api_sale -> shopinvader_schema_sale
+	shopinvader_api_security_sale [label=shopinvader_api_security_sale color=black]
+	shopinvader_api_sale -> shopinvader_api_security_sale
+	shopinvader_filtered_model [label=shopinvader_filtered_model color=black]
+	shopinvader_api_sale -> shopinvader_filtered_model
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_sale -> extendable_fastapi
+	report_generate_helper [label=report_generate_helper color=black]
+	shopinvader_api_sale -> report_generate_helper
+	base [label=base color=black]
+	report_generate_helper -> base
+	shopinvader_api_settings [label=shopinvader_api_settings color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_settings
+	"(python) fastapi" [label="(python) fastapi" color=blue shape=box]
+	shopinvader_api_settings -> "(python) fastapi"
+	"(python) extendable_pydantic>=1.0.0" [label="(python) extendable_pydantic>=1.0.0" color=blue shape=box]
+	shopinvader_api_settings -> "(python) extendable_pydantic>=1.0.0"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_api_settings -> "(python) pydantic>=2.0.0"
+	extendable [label=extendable color=black]
+	shopinvader_api_settings -> extendable
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_settings -> extendable_fastapi
+	fastapi [label=fastapi color=black]
+	shopinvader_api_settings -> fastapi
+	shopinvader_api_signin_jwt [label=shopinvader_api_signin_jwt color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_signin_jwt
+	fastapi_auth_jwt [label=fastapi_auth_jwt color=black]
+	shopinvader_api_signin_jwt -> fastapi_auth_jwt
+	fastapi [label=fastapi color=black]
+	fastapi_auth_jwt -> fastapi
+	auth_jwt [label=auth_jwt color=black]
+	fastapi_auth_jwt -> auth_jwt
+	"(python) pyjwt" [label="(python) pyjwt" color=blue shape=box]
+	auth_jwt -> "(python) pyjwt"
+	"(python) cryptography" [label="(python) cryptography" color=blue shape=box]
+	auth_jwt -> "(python) cryptography"
+	shopinvader_anonymous_partner [label=shopinvader_anonymous_partner color=black]
+	shopinvader_api_signin_jwt -> shopinvader_anonymous_partner
+	shopinvader_sale_cart [label=shopinvader_sale_cart color=black]
+	shopinvader_api_signin_jwt -> shopinvader_sale_cart
+	shopinvader_api_wishlist [label=shopinvader_api_wishlist color=black]
+	shopinvader_v2_app_demo -> shopinvader_api_wishlist
+	fastapi [label=fastapi color=black]
+	shopinvader_api_wishlist -> fastapi
+	sale_wishlist [label=sale_wishlist color=black]
+	shopinvader_api_wishlist -> sale_wishlist
+	sale_product_set [label=sale_product_set color=black]
+	sale_wishlist -> sale_product_set
+	sale [label=sale color=black]
+	sale_product_set -> sale
+	sale_management [label=sale_management color=black]
+	sale_product_set -> sale_management
+	"product_set [MISSING]" [label="product_set [MISSING]" color=red]
+	sale_product_set -> "product_set [MISSING]"
+	extendable_fastapi [label=extendable_fastapi color=black]
+	shopinvader_api_wishlist -> extendable_fastapi
+	shopinvader_api_security_sale [label=shopinvader_api_security_sale color=black]
+	shopinvader_api_wishlist -> shopinvader_api_security_sale
+	shopinvader_schema_sale [label=shopinvader_schema_sale color=black]
+	shopinvader_api_wishlist -> shopinvader_schema_sale
+	shopinvader_sale_cart [label=shopinvader_sale_cart color=black]
+	shopinvader_api_wishlist -> shopinvader_sale_cart
+	shopinvader_filtered_model [label=shopinvader_filtered_model color=black]
+	shopinvader_api_wishlist -> shopinvader_filtered_model
+	shopinvader_fastapi_auth_jwt [label=shopinvader_fastapi_auth_jwt color=black]
+	shopinvader_v2_app_demo -> shopinvader_fastapi_auth_jwt
+	fastapi_auth_jwt [label=fastapi_auth_jwt color=black]
+	shopinvader_fastapi_auth_jwt -> fastapi_auth_jwt
+	shopinvader_anonymous_partner [label=shopinvader_anonymous_partner color=black]
+	shopinvader_fastapi_auth_jwt -> shopinvader_anonymous_partner
+	shopinvader_product_brand_tag [label=shopinvader_product_brand_tag color=black]
+	shopinvader_v2_app_demo -> shopinvader_product_brand_tag
+	"(python) extendable_pydantic>=1.2.0" [label="(python) extendable_pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_product_brand_tag -> "(python) extendable_pydantic>=1.2.0"
+	shopinvader_product_brand [label=shopinvader_product_brand color=black]
+	shopinvader_product_brand_tag -> shopinvader_product_brand
+	"(python) extendable_pydantic>=1.2.0" [label="(python) extendable_pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_product_brand -> "(python) extendable_pydantic>=1.2.0"
+	product_brand [label=product_brand color=black]
+	shopinvader_product_brand -> product_brand
+	sale [label=sale color=black]
+	product_brand -> sale
+	shopinvader_base_url [label=shopinvader_base_url color=black]
+	shopinvader_product_brand -> shopinvader_base_url
+	"(python) python-slugify" [label="(python) python-slugify" color=blue shape=box]
+	shopinvader_base_url -> "(python) python-slugify"
+	base [label=base color=black]
+	shopinvader_base_url -> base
+	base_sparse_field_list_support [label=base_sparse_field_list_support color=black]
+	shopinvader_base_url -> base_sparse_field_list_support
+	base [label=base color=black]
+	base_sparse_field_list_support -> base
+	base_sparse_field [label=base_sparse_field color=black]
+	base_sparse_field_list_support -> base_sparse_field
+	shopinvader_product [label=shopinvader_product color=black]
+	shopinvader_product_brand -> shopinvader_product
+	"(python) extendable_pydantic>=1.2.0" [label="(python) extendable_pydantic>=1.2.0" color=blue shape=box]
+	shopinvader_product -> "(python) extendable_pydantic>=1.2.0"
+	"(python) pydantic>=2.0.0" [label="(python) pydantic>=2.0.0" color=blue shape=box]
+	shopinvader_product -> "(python) pydantic>=2.0.0"
+	"(python) unidecode" [label="(python) unidecode" color=blue shape=box]
+	shopinvader_product -> "(python) unidecode"
+	base_sparse_field [label=base_sparse_field color=black]
+	shopinvader_product -> base_sparse_field
+	product [label=product color=black]
+	shopinvader_product -> product
+	pydantic [label=pydantic color=black]
+	shopinvader_product -> pydantic
+	extendable [label=extendable color=black]
+	shopinvader_product -> extendable
+	shopinvader_product_seo [label=shopinvader_product_seo color=black]
+	shopinvader_product_brand -> shopinvader_product_seo
+	shopinvader_product [label=shopinvader_product color=black]
+	shopinvader_product_seo -> shopinvader_product
+	product_brand_tag [label=product_brand_tag color=black]
+	shopinvader_product_brand_tag -> product_brand_tag
+	product_brand [label=product_brand color=black]
+	product_brand_tag -> product_brand
+	shopinvader_product_brand [label=shopinvader_product_brand color=black]
+	shopinvader_v2_app_demo -> shopinvader_product_brand
+	shopinvader_product_description [label=shopinvader_product_description color=black]
+	shopinvader_v2_app_demo -> shopinvader_product_description
+	product_sale_description [label=product_sale_description color=black]
+	shopinvader_product_description -> product_sale_description
+	product [label=product color=black]
+	product_sale_description -> product
+	shopinvader_product [label=shopinvader_product color=black]
+	shopinvader_product_description -> shopinvader_product
+	shopinvader_product_seo [label=shopinvader_product_seo color=black]
+	shopinvader_v2_app_demo -> shopinvader_product_seo
+	shopinvader_product_url [label=shopinvader_product_url color=black]
+	shopinvader_v2_app_demo -> shopinvader_product_url
+	shopinvader_base_url [label=shopinvader_base_url color=black]
+	shopinvader_product_url -> shopinvader_base_url
+	shopinvader_product [label=shopinvader_product color=black]
+	shopinvader_product_url -> shopinvader_product
+	shopinvader_product [label=shopinvader_product color=black]
+	shopinvader_v2_app_demo -> shopinvader_product
+	shopinvader_search_engine_image [label=shopinvader_search_engine_image color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_image
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_search_engine_image -> shopinvader_search_engine
+	search_engine_serializer_pydantic [label=search_engine_serializer_pydantic color=black]
+	shopinvader_search_engine -> search_engine_serializer_pydantic
+	"(python) pydantic" [label="(python) pydantic" color=blue shape=box]
+	search_engine_serializer_pydantic -> "(python) pydantic"
+	connector_search_engine [label=connector_search_engine color=black]
+	search_engine_serializer_pydantic -> connector_search_engine
+	pydantic [label=pydantic color=black]
+	search_engine_serializer_pydantic -> pydantic
+	shopinvader_product [label=shopinvader_product color=black]
+	shopinvader_search_engine -> shopinvader_product
+	search_engine_image_thumbnail [label=search_engine_image_thumbnail color=black]
+	shopinvader_search_engine_image -> search_engine_image_thumbnail
+	base_partition [label=base_partition color=black]
+	search_engine_image_thumbnail -> base_partition
+	connector_search_engine [label=connector_search_engine color=black]
+	search_engine_image_thumbnail -> connector_search_engine
+	fs_image_thumbnail [label=fs_image_thumbnail color=black]
+	search_engine_image_thumbnail -> fs_image_thumbnail
+	"(python) python_slugify" [label="(python) python_slugify" color=blue shape=box]
+	fs_image_thumbnail -> "(python) python_slugify"
+	"fs_image [MISSING]" [label="fs_image [MISSING]" color=red]
+	fs_image_thumbnail -> "fs_image [MISSING]"
+	base_partition [label=base_partition color=black]
+	fs_image_thumbnail -> base_partition
+	fs_base_multi_image [label=fs_base_multi_image color=black]
+	search_engine_image_thumbnail -> fs_base_multi_image
+	fs_image [label=fs_image color=black]
+	fs_base_multi_image -> fs_image
+	fs_product_multi_image [label=fs_product_multi_image color=black]
+	shopinvader_search_engine_image -> fs_product_multi_image
+	fs_base_multi_image [label=fs_base_multi_image color=black]
+	fs_product_multi_image -> fs_base_multi_image
+	product [label=product color=black]
+	fs_product_multi_image -> product
+	sales_team [label=sales_team color=black]
+	fs_product_multi_image -> sales_team
+	image_tag [label=image_tag color=black]
+	fs_product_multi_image -> image_tag
+	server_environment [label=server_environment color=black]
+	image_tag -> server_environment
+	shopinvader_search_engine_product_brand_image [label=shopinvader_search_engine_product_brand_image color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_product_brand_image
+	shopinvader_product_brand [label=shopinvader_product_brand color=black]
+	shopinvader_search_engine_product_brand_image -> shopinvader_product_brand
+	shopinvader_search_engine_image [label=shopinvader_search_engine_image color=black]
+	shopinvader_search_engine_product_brand_image -> shopinvader_search_engine_image
+	shopinvader_search_engine_product_brand [label=shopinvader_search_engine_product_brand color=black]
+	shopinvader_search_engine_product_brand_image -> shopinvader_search_engine_product_brand
+	shopinvader_product_brand [label=shopinvader_product_brand color=black]
+	shopinvader_search_engine_product_brand -> shopinvader_product_brand
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_search_engine_product_brand -> shopinvader_search_engine
+	fs_product_brand_multi_image [label=fs_product_brand_multi_image color=black]
+	shopinvader_search_engine_product_brand_image -> fs_product_brand_multi_image
+	fs_base_multi_image [label=fs_base_multi_image color=black]
+	fs_product_brand_multi_image -> fs_base_multi_image
+	product_brand [label=product_brand color=black]
+	fs_product_brand_multi_image -> product_brand
+	sales_team [label=sales_team color=black]
+	fs_product_brand_multi_image -> sales_team
+	image_tag [label=image_tag color=black]
+	fs_product_brand_multi_image -> image_tag
+	shopinvader_search_engine_product_price [label=shopinvader_search_engine_product_price color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_product_price
+	product_get_price_helper [label=product_get_price_helper color=black]
+	shopinvader_search_engine_product_price -> product_get_price_helper
+	"account [MISSING]" [label="account [MISSING]" color=red]
+	product_get_price_helper -> "account [MISSING]"
+	product [label=product color=black]
+	product_get_price_helper -> product
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_search_engine_product_price -> shopinvader_search_engine
+	shopinvader_search_engine_product_stock_state [label=shopinvader_search_engine_product_stock_state color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_product_stock_state
+	product_stock_state [label=product_stock_state color=black]
+	shopinvader_search_engine_product_stock_state -> product_stock_state
+	"sale_stock [MISSING]" [label="sale_stock [MISSING]" color=red]
+	product_stock_state -> "sale_stock [MISSING]"
+	shopinvader_search_engine_product_stock [label=shopinvader_search_engine_product_stock color=black]
+	shopinvader_search_engine_product_stock_state -> shopinvader_search_engine_product_stock
+	"(python) slugify" [label="(python) slugify" color=blue shape=box]
+	shopinvader_search_engine_product_stock -> "(python) slugify"
+	"stock [MISSING]" [label="stock [MISSING]" color=red]
+	shopinvader_search_engine_product_stock -> "stock [MISSING]"
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_search_engine_product_stock -> shopinvader_search_engine
+	shopinvader_search_engine_update_image [label=shopinvader_search_engine_update_image color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_update_image
+	shopinvader_search_engine_image [label=shopinvader_search_engine_image color=black]
+	shopinvader_search_engine_update_image -> shopinvader_search_engine_image
+	shopinvader_search_engine_update [label=shopinvader_search_engine_update color=black]
+	shopinvader_search_engine_update_image -> shopinvader_search_engine_update
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_search_engine_update -> shopinvader_search_engine
+	shopinvader_search_engine_update_product_brand_image [label=shopinvader_search_engine_update_product_brand_image color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_update_product_brand_image
+	shopinvader_search_engine_update [label=shopinvader_search_engine_update color=black]
+	shopinvader_search_engine_update_product_brand_image -> shopinvader_search_engine_update
+	shopinvader_search_engine_product_brand_image [label=shopinvader_search_engine_product_brand_image color=black]
+	shopinvader_search_engine_update_product_brand_image -> shopinvader_search_engine_product_brand_image
+	shopinvader_search_engine_update_product_brand [label=shopinvader_search_engine_update_product_brand color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_update_product_brand
+	shopinvader_search_engine_update [label=shopinvader_search_engine_update color=black]
+	shopinvader_search_engine_update_product_brand -> shopinvader_search_engine_update
+	shopinvader_search_engine_product_brand [label=shopinvader_search_engine_product_brand color=black]
+	shopinvader_search_engine_update_product_brand -> shopinvader_search_engine_product_brand
+	shopinvader_search_engine_update_product_media [label=shopinvader_search_engine_update_product_media color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_update_product_media
+	shopinvader_search_engine_update [label=shopinvader_search_engine_update color=black]
+	shopinvader_search_engine_update_product_media -> shopinvader_search_engine_update
+	shopinvader_search_engine_product_media [label=shopinvader_search_engine_product_media color=black]
+	shopinvader_search_engine_update_product_media -> shopinvader_search_engine_product_media
+	shopinvader_product [label=shopinvader_product color=black]
+	shopinvader_search_engine_product_media -> shopinvader_product
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_search_engine_product_media -> shopinvader_search_engine
+	fs_product_multi_media [label=fs_product_multi_media color=black]
+	shopinvader_search_engine_product_media -> fs_product_multi_media
+	"fs_base_multi_media [MISSING]" [label="fs_base_multi_media [MISSING]" color=red]
+	fs_product_multi_media -> "fs_base_multi_media [MISSING]"
+	product [label=product color=black]
+	fs_product_multi_media -> product
+	sales_team [label=sales_team color=black]
+	fs_product_multi_media -> sales_team
+	shopinvader_search_engine_update_product_template_multi_link [label=shopinvader_search_engine_update_product_template_multi_link color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine_update_product_template_multi_link
+	shopinvader_search_engine_update [label=shopinvader_search_engine_update color=black]
+	shopinvader_search_engine_update_product_template_multi_link -> shopinvader_search_engine_update
+	shopinvader_search_engine_product_template_multi_link [label=shopinvader_search_engine_product_template_multi_link color=black]
+	shopinvader_search_engine_update_product_template_multi_link -> shopinvader_search_engine_product_template_multi_link
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_search_engine_product_template_multi_link -> shopinvader_search_engine
+	product_template_multi_link [label=product_template_multi_link color=black]
+	shopinvader_search_engine_product_template_multi_link -> product_template_multi_link
+	sale [label=sale color=black]
+	product_template_multi_link -> sale
+	base_sparse_field [label=base_sparse_field color=black]
+	shopinvader_search_engine_product_template_multi_link -> base_sparse_field
+	shopinvader_search_engine [label=shopinvader_search_engine color=black]
+	shopinvader_v2_app_demo -> shopinvader_search_engine
+}
