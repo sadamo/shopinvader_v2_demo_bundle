@@ -8,15 +8,14 @@
                 decoration-danger="state in ('invalid_data', 'recompute_error')"
                 decoration-warning="state not in ('invalid_data', 'recompute_error', 'done')"
             >
-                <field name="hide_res_model" invisible="1"/>
                 <field name="backend_id" />
                 <field name="index_id" />
                 <field name="state" />
                 <field name="date_recomputed" />
                 <field name="date_synchronized" />
-                <field name="res_model" invisible="hide_res_model" />
-                <field name="res_id" invisible="hide_res_model" />
-                <field name="record_id" invisible="hide_res_model" />
+                <field name="res_model" />
+                <field name="res_id" />
+                <field name="record_id" />
             </tree>
         </field>
     </record>
