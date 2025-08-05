@@ -8,6 +8,7 @@
                 decoration-danger="state in ('invalid_data', 'recompute_error')"
                 decoration-warning="state not in ('invalid_data', 'recompute_error', 'done')"
             >
+                <field name="hide_res_model" invisible="1"/>
                 <field name="backend_id" />
                 <field name="index_id" />
                 <field name="state" />
