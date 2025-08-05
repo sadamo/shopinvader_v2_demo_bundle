@@ -3,16 +3,28 @@
 
 {
     "name": "Sale Cart",
-    "summary": """
-        Uee Sale Orders as cart.
-        """,
-    "version": "16.0",
-    "license": "AGPL-3",
-    "author": "ACSONE SA/NV",
-    "website": "https://github.com/shopinvader/odoo-shopinvader",
-    "depends": ["sale", "sales_team"],
-    "data": ["views/sale_order.xml"],
-    "demo": [],
-    "external_dependencies": {"python": ["openupgradelib"]},
-    "pre_init_hook": "pre_init_hook",
+    "summary": "Carrinho de vendas para Odoo",
+    "version": "17.0.1.0.0",
+    "author": "Seu Nome ou Empresa",
+    "license": "LGPL-3",
+    "depends": [
+        "sale",
+        "sales_team"
+        # Adicione outros módulos necessários e remova os que não existem no Odoo 17
+    ],
+    "data": [
+        # Adicione arquivos XML, CSV, etc. necessários para o módulo funcionar
+    ],
+    "external_dependencies": {
+        "python": [
+            "openupgradelib"
+        ]
+    },
+    "installable": True,
+    "application": False,
+    # "assets": {
+    #     "web.assets_backend": [
+    #         # Adicione arquivos JS/CSS se necessário
+    #     ],
+    # },
 }
