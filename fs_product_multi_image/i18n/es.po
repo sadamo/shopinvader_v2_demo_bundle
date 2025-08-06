@@ -55,18 +55,6 @@ msgid "Display Name"
 msgstr "Mostrar Nombre"
 
 #. module: fs_product_multi_image
-#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_product__image_medium
-#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_template__image_medium
-msgid "FS Image Medium"
-msgstr ""
-
-#. module: fs_product_multi_image
-#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_product__image
-#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_template__image
-msgid "FS Main Image"
-msgstr ""
-
-#. module: fs_product_multi_image
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_category_image__id
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_image__id
 msgid "ID"
@@ -79,7 +67,6 @@ msgstr ""
 "Si necesita editar las imágenes, hágalo desde la plantilla del producto."
 
 #. module: fs_product_multi_image
-#: model_terms:ir.ui.view,arch_db:fs_product_multi_image.fs_product_category_image_kanban_view
 #: model_terms:ir.ui.view,arch_db:fs_product_multi_image.fs_product_image_kanban_view
 #: model_terms:ir.ui.view,arch_db:fs_product_multi_image.product_template_only_form_view
 msgid "Image"
@@ -89,6 +76,8 @@ msgstr "Imagen"
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_category_image__image_medium
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_image__image_medium
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_product_category__image_medium
+#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_product__image_medium
+#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_template__image_medium
 msgid "Image (128)"
 msgstr "Imagen (128)"
 
@@ -96,6 +85,8 @@ msgstr "Imagen (128)"
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_category_image__image
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_image__image
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_product_category__image
+#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_product__image
+#: model:ir.model.fields,field_description:fs_product_multi_image.field_product_template__image
 msgid "Image (original)"
 msgstr "Imagen (original)"
 
@@ -114,12 +105,6 @@ msgstr "Etiqueta de la Imagen"
 #: model_terms:ir.ui.view,arch_db:fs_product_multi_image.product_template_only_form_view
 msgid "Images"
 msgstr "Imágenes"
-
-#. module: fs_product_multi_image
-#: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_category_image____last_update
-#: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_image____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
 
 #. module: fs_product_multi_image
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_fs_product_category_image__write_uid
@@ -228,6 +213,9 @@ msgstr "Etiqueta"
 #: model:ir.model.fields,field_description:fs_product_multi_image.field_product_product__variant_image_ids
 msgid "Variant Images"
 msgstr "Imágenes de Variante"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
 
 #~ msgid "Image 128"
 #~ msgstr "Imagen 128"

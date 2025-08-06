@@ -7,7 +7,6 @@ from odoo.addons.fs_image.fields import FSImage
 
 
 class ProductTemplate(models.Model):
-
     _inherit = "product.template"
 
     image_ids = fields.One2many(
@@ -20,17 +19,9 @@ class ProductTemplate(models.Model):
         # Store it to improve perfs
         store=True,
     )
-    image = FSImage(
-        string="FS Main Image",
-        related="main_image_id.image",
-        readonly=True,
-        store=False,
-    )
+    image = FSImage(related="main_image_id.image", readonly=True, store=False)
     image_medium = FSImage(
-        string="FS Image Medium",
-        related="main_image_id.image_medium",
-        readonly=True,
-        store=False,
+        related="main_image_id.image_medium", readonly=True, store=False
     )
 
     @api.depends("image_ids", "image_ids.sequence")

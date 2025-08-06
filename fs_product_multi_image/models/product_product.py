@@ -25,17 +25,9 @@ class ProductProduct(models.Model):
         # Store it to improve perfs
         store=True,
     )
-    image = FSImage(
-        string="FS Main Image",
-        related="main_image_id.image",
-        readonly=True,
-        store=False,
-    )
+    image = FSImage(related="main_image_id.image", readonly=True, store=False)
     image_medium = FSImage(
-        "FS Image Medium",
-        related="main_image_id.image_medium",
-        readonly=True,
-        store=False,
+        related="main_image_id.image_medium", readonly=True, store=False
     )
 
     @api.depends(
@@ -47,10 +39,10 @@ class ProductProduct(models.Model):
     def _compute_variant_image_ids(self):
         for variant in self:
             variant_image_ids = variant.image_ids.filtered(
-                lambda i: i._match_variant(variant)
+                lambda i, v=variant: i._match_variant(v)
             )
             variant_image_ids = variant_image_ids.sorted(
-                key=lambda i: (i.sequence, i.name or "")
+                key=lambda i: (i.sequence, i.name)
             )
             variant.variant_image_ids = variant_image_ids
 
