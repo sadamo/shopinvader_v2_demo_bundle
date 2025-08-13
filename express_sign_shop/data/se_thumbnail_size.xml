@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="small" model="se.thumbnail.size">
+        <field name="name">Shop Small</field>
+        <field name="key">small</field>
+        <field name="size_x">60</field>
+        <field name="size_y">60</field>
+    </record>
+
+    <record id="medium" model="se.thumbnail.size">
+        <field name="name">Shop Medium</field>
+        <field name="key">medium</field>
+        <field name="size_x">300</field>
+        <field name="size_y">300</field>
+    </record>
+
+    <record id="large" model="se.thumbnail.size">
+        <field name="name">Shop Large</field>
+        <field name="key">large</field>
+        <field name="size_x">500</field>
+        <field name="size_y">500</field>
+    </record>
+
+    <record id="big800" model="se.thumbnail.size">
+        <field name="name">Shop 800</field>
+        <field name="key">big</field>
+        <field name="size_x">800</field>
+        <field name="size_y">800</field>
+    </record>
+
+    <record id="big4k" model="se.thumbnail.size">
+        <field name="name">Shop 4k</field>
+        <field name="key">4k</field>
+        <field name="size_x">1500</field>
+        <field name="size_y">800</field>
+    </record>
+
+</odoo>

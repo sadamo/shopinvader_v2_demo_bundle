@@ -1,0 +1,2 @@
+- Luis Felipe Miléo \<mileo@kmee.com.br\>
+- Daniel Sadamo \<daniel.sadamo@kmee.com.br\>

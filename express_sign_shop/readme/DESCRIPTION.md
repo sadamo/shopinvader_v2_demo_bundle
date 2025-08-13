@@ -1,0 +1,1 @@
+Generate url for partner

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/LGPL). -->
+<odoo noupdate="1">
+    <record id="se_backend_express_sign_shop_staging" model="se.backend">
+        <field name="name">express_sign_shop (staging) elasticsearch Backend</field>
+        <field name="tech_name">express_sign_staging</field>
+        <field name="es_server_host">https://elastic.kmee.com.br</field>
+        <field name="backend_type">elasticsearch</field>
+        <field name="auth_type">api_key</field>
+        <field name="api_key_id">IraOs5MB-xDo75cGUTI8</field>
+        <field name="api_key">fpMoF12oTcWvyp0Tmv5B8g</field>
+        <field name="ssl" eval="True" />
+    </record>
+</odoo>
