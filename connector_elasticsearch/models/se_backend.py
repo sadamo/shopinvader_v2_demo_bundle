@@ -71,3 +71,9 @@ class SeBackend(models.Model):
             }
         )
         return env_fields
+
+    def _get_adapter_class(self):
+        if self.backend_type == "elasticsearch":
+            return ElasticSearchAdapter
+        else:
+            return super()._get_adapter_class()
