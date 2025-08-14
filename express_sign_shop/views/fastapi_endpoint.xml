@@ -11,7 +11,7 @@
                     <group
                     name="shopinvader_configuration"
                     title="Configuration"
-                    invisible="app != 'express_sign_shop"
+                    invisible="app != 'express_sign_shop'"
                 >
                         <field
                         name="auth_jwt_validator_id"
