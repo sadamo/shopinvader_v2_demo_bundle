@@ -4,6 +4,7 @@
 
 from odoo import fields, models
 
+
 class SeBinding(models.Model):
     _inherit = "se.binding"
 

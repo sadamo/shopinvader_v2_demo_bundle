@@ -6,7 +6,7 @@
     "name": "Sale Channel Search Engine Product",
     "summary": "Implement an export of category in search engine based on "
     "sale channel link",
-    "version": "17.0.1.0.0",
+    "version": "17.0.0.1.0",
     "development_status": "Alpha",
     "category": "Uncategorized",
     "website": "https://github.com/OCA/sale-channel",
@@ -24,5 +24,4 @@
         "views/product_template_view.xml",
     ],
     "demo": [],
-    "installable": True,
 }

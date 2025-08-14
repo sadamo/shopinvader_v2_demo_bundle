@@ -4,6 +4,7 @@
 
 from odoo import models
 
+
 class ProductTemplate(models.Model):
     _inherit = ["product.template", "sale.channel.owner"]
     _name = "product.template"
