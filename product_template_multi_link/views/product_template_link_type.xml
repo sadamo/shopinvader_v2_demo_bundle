@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
     <record model="ir.ui.view" id="product_template_link_type_tree_view">
         <field name="name">product.template.link.type.tree (in product_template_multi_link)</field>
@@ -7,9 +9,9 @@
             <tree editable="top">
                 <field name="is_symmetric" />
                 <field name="name" />
-                <field name="inverse_name" required="1" />
+                <field name="inverse_name" required="1" readonly="is_symmetric == True" />
                 <field name="code" />
-                <field name="inverse_code" />
+                <field name="inverse_code" readonly="is_symmetric == True" />
             </tree>
         </field>
     </record>

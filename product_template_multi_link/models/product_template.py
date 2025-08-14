@@ -7,24 +7,8 @@ from collections import defaultdict
 from odoo import _, api, fields, models
 from odoo.exceptions import AccessError
 
+
 class ProductTemplate(models.Model):
-    def show_product_template_links(self):
-        self.ensure_one()
-        return {
-            "name": _("Product links"),
-            "type": "ir.actions.act_window",
-            "view_mode": "tree,form",
-            "res_model": "product.template.link",
-            "domain": [
-                "|",
-                ("left_product_tmpl_id", "=", self.id),
-                ("right_product_tmpl_id", "=", self.id),
-            ],
-            "context": {
-                "search_default_groupby_type": True,
-                "default_left_product_tmpl_id": self.id,
-            },
-        }
     _inherit = "product.template"
 
     product_template_link_ids = fields.One2many(
@@ -57,19 +41,65 @@ class ProductTemplate(models.Model):
     @api.depends("product_template_link_ids")
     def _compute_product_template_link_count(self):
         link_model = self.env["product.template.link"]
+        # Set product_template_link_qty to 0 if user has no access on the model
         try:
             link_model.check_access_rights("read")
         except AccessError:
             for rec in self:
                 rec.product_template_link_count = 0
             return
+
         domain = [
             "|",
             ("left_product_tmpl_id", "in", self.ids),
             ("right_product_tmpl_id", "in", self.ids),
         ]
+
         res_1 = link_model.read_group(
             domain=domain,
             fields=["left_product_tmpl_id"],
+            groupby=["left_product_tmpl_id"],
         )
-        # ...continuação do método...
+        res_2 = link_model.read_group(
+            domain=domain,
+            fields=["right_product_tmpl_id"],
+            groupby=["right_product_tmpl_id"],
+        )
+
+        link_dict = {}
+        for dic in res_1:
+            link_id = dic["left_product_tmpl_id"][0]
+            link_dict.setdefault(link_id, 0)
+            link_dict[link_id] += dic["left_product_tmpl_id_count"]
+        for dic in res_2:
+            link_id = dic["right_product_tmpl_id"][0]
+            link_dict.setdefault(link_id, 0)
+            link_dict[link_id] += dic["right_product_tmpl_id_count"]
+
+        for rec in self:
+            rec.product_template_link_count = link_dict.get(rec.id, 0)
+
+    def show_product_template_links(self):
+        self.ensure_one()
+        return {
+            "name": _("Product links"),
+            "type": "ir.actions.act_window",
+            "view_mode": "tree,form",
+            "res_model": "product.template.link",
+            "domain": [
+                "|",
+                ("left_product_tmpl_id", "=", self.id),
+                ("right_product_tmpl_id", "=", self.id),
+            ],
+            "context": {
+                "search_default_groupby_type": True,
+                "default_left_product_tmpl_id": self.id,
+            },
+        }
+
+    def get_links_by_code(self, code):
+        """Get all active active links maching code for current product."""
+        self.ensure_one()
+        return self.product_template_link_ids.filtered(
+            lambda r: r.type_id.code == code and r.is_link_active
+        )

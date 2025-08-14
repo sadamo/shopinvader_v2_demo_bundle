@@ -17,13 +17,13 @@ Product Multi Links (Template)
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fe--commerce-lightgray.png?logo=github
-    :target: https://github.com/OCA/e-commerce/tree/17.0/product_template_multi_link
+    :target: https://github.com/OCA/e-commerce/tree/16.0/product_template_multi_link
     :alt: OCA/e-commerce
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/e-commerce-17-0/e-commerce-17-0-product_template_multi_link
+    :target: https://translation.odoo-community.org/projects/e-commerce-16-0/e-commerce-16-0-product_template_multi_link
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/e-commerce&target_branch=17.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/e-commerce&target_branch=16.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -58,3 +58,82 @@ Usage
 
 * To mass edit or create links between products templates, Go to
   Sale > Configuration > Products > Product Links
+
+.. figure:: https://raw.githubusercontent.com/product_template_multi_link/static/description/product_template_link_tree.png
+   :width: 800 px
+
+A kanban view is also available
+
+.. figure:: https://raw.githubusercontent.com/product_template_multi_link/static/description/product_template_link_kanban.png
+   :width: 800 px
+
+
+* You can manage links by product, Go to Sales > Sales > Products and select
+  a product
+
+.. figure:: https://raw.githubusercontent.com/product_template_multi_link/static/description/product_template_form.png
+   :width: 800 px
+
+* You can so add new item, line by line, via an editable tree view
+
+.. figure:: https://raw.githubusercontent.com/product_template_multi_link/static/description/product_template_link_tree_edit.png
+   :width: 800 px
+
+
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/113/14.0
+
+Known issues / Roadmap
+======================
+
+* This module links templates together. 'product_multi_link' links variants
+  together. We could, in a next version of Odoo, include variants features
+  in that module, and adding a new group in 'Manage Product Variant Links'.
+
+* Develop another module product_template_multi_link_customer, that adds
+  a new type of link named 'customer'. Those links could be generated
+  automatically by scheduled cron task, analyzing sale.order.line.
+  Odoo could create so, the 3 most products sold when a given product is
+  sold.
+
+Bug Tracker
+===========
+
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/e-commerce/issues>`_.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us to smash it by providing a detailed and welcomed
+`feedback <https://github.com/OCA/e-commerce/issues/new?body=module:%20product_template_multi_link%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+
+Do not contact contributors directly about support or help with technical issues.
+
+Credits
+=======
+
+Authors
+~~~~~~~
+
+* GRAP
+* ACSONE SA/NV
+
+Contributors
+~~~~~~~~~~~~
+
+* Sylvain LE GAL <http://www.twitter.com/legalsylvain>
+
+Maintainers
+~~~~~~~~~~~
+
+This module is maintained by the OCA.
+
+.. image:: https://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: https://odoo-community.org
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+This module is part of the `OCA/e-commerce <https://github.com/OCA/e-commerce/tree/16.0/product_template_multi_link>`_ project on GitHub.
+
+You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
