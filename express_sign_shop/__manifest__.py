@@ -14,22 +14,22 @@
         "sale_channel_search_engine_product",
         "shopinvader_anonymous_partner",
         #
-        "shopinvader_api_address",
-        "shopinvader_api_cart",
-        "shopinvader_api_cart_step",
-        "shopinvader_api_customer",
+        # "shopinvader_api_address",
+        # "shopinvader_api_cart",
+        # "shopinvader_api_cart_step",
+        # "shopinvader_api_customer",
         "shopinvader_api_lead",
-        "shopinvader_api_sale",
-        "shopinvader_api_sale_loyalty",
+        # "shopinvader_api_sale",
+        # "shopinvader_api_sale_loyalty",
         "shopinvader_api_settings",
-        "shopinvader_api_wishlist",
+        # "shopinvader_api_wishlist",
         #
         "shopinvader_api_delivery_carrier",
         #
-        "shopinvader_api_payment_cart",
-        "shopinvader_api_payment_provider_custom",
-        "shopinvader_api_payment_provider_sips",
-        "shopinvader_api_payment_provider_stripe",
+        # "shopinvader_api_payment_cart",
+        # "shopinvader_api_payment_provider_custom",
+        # "shopinvader_api_payment_provider_sips",
+        # "shopinvader_api_payment_provider_stripe",
         #
         "shopinvader_api_signin_jwt",
         #
