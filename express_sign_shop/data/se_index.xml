@@ -7,7 +7,7 @@
         <field name="backend_id" ref="se_backend_express_sign_shop_staging" />
         <field name="name">elastic-product-en_us</field>
         <field name="config_id" ref="index_config_product_product" />
-        <field name="lang_id" ref="base.lang_en_US" />
+        <field name="lang_id" ref="base.lang_en" />
         <field name="model_id" ref="product.model_product_product" />
         <field name="serializer_type">shopinvader_product_exports</field>
         <field name="stock_level_config">state_and_qty</field>
@@ -17,7 +17,7 @@
         <field name="backend_id" ref="se_backend_express_sign_shop_staging" />
         <field name="name">elastic-category-en_us</field>
         <field name="config_id" ref="index_config_product_category" />
-        <field name="lang_id" ref="base.lang_en_US" />
+        <field name="lang_id" ref="base.lang_en" />
         <field name="model_id" ref="product.model_product_category" />
         <field name="serializer_type">shopinvader_category_exports</field>
     </record>
@@ -26,7 +26,7 @@
         <field name="backend_id" ref="se_backend_express_sign_shop_staging" />
         <field name="name">elastic-brand-en_us</field>
         <field name="config_id" ref="index_config_product_brand" />
-        <field name="lang_id" ref="base.lang_en_US" />
+        <field name="lang_id" ref="base.lang_en" />
         <field name="model_id" ref="product_brand.model_product_brand" />
         <field name="serializer_type">shopinvader_brand_exports</field>
     </record>
